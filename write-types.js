@@ -1,4 +1,4 @@
-const { readJson, writeFile, ensureDir } = require("fs-extra");
+const { readJson, writeFile, ensureDir, readdir } = require("fs-extra");
 const { flattenDeep, orderBy, has, compact, uniq, uniqBy, isString, cloneDeep } = require("lodash");
 const path = require("path");
 const { expand } = require("jsonld");
@@ -48,11 +48,16 @@ function stripSchemaPath(text) {
 }
 
 async function extractSchemaOrgData() {
-    const jsonld = await expand(await readJson(schema));
-    const additions = await expand(await readJson(roCrateAdditions));
+    let data = await expand(await readJson(schema));
 
-    let graph = [...jsonld, ...additions.filter((e) => e["@id"] !== "ro-crate-metadata.json")];
-    extractClassesAndProperties({ graph });
+    const extensionPath = path.join(__dirname, "schema.org-extensions");
+    const extensions = await readdir(extensionPath);
+    for (let extension of extensions) {
+        extension = await expand(await readJson(path.join(extensionPath, extension)));
+        data = [...data, ...extension.filter((e) => e["@id"] !== "ro-crate-metadata.json")];
+    }
+
+    extractClassesAndProperties({ graph: data });
     mapPropertiesToClasses();
 }
 
