@@ -19,9 +19,9 @@ in the `types` folder.
 
 ## Adding RO-Crate extra entity definitions
 
-RO-Crate defines things that are not in schema.org. To create type definitions for them add them
-into the file `ro-crate-additions-schema.jsonld`. Note that it must confirm `exactly` to the
-structure of the schema.org.jsonld file.
+RO-Crate defines things that are not in schema.org. To create type definitions for them add a file
+for them into the folder `schema.org-extensions`. Note that it must be an `ro-crate`file and it must
+conform `exactly` to the structure of the schema.org.jsonld file.
 
 When adding entities into this file ensure all of the links use the original entity names not the
 ro-crate names. For example, `link X to pcdm:Object` not `pcdm:RepositoryObject`. The entity
