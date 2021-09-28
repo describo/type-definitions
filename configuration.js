@@ -26,7 +26,7 @@ module.exports = {
         },
     },
 
-    // extra types to be added to specific classes
+    // extra properties to be added to specific classes
     addPropertyToClasses: {
         hasPart: {
             classes: [
