@@ -2,9 +2,6 @@ module.exports = {
     // the name of the schema.org jsonld file - expected to be in this folder
     schema: "schema.org.jsonld",
 
-    // the name of the extra ro crate stuff to be added - expected to be in this folder
-    roCrateAdditions: "ro-crate-additional-schema.jsonld",
-
     // the name of the ro crate context - expected to be in this folder
     crateContext: "crate-context.jsonld",
 
