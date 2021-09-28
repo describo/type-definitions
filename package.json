@@ -1,0 +1,16 @@
+{
+  "name": "arkisto-type-definitions",
+  "version": "1.0.0",
+  "description": "The Describo online UI requires a profile that defines the entities and their properties that can be added. This folder has the tools to create that profile.",
+  "main": "configuration.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "jsonld": "^5.2.0",
+    "lodash": "^4.17.21"
+  }
+}
