@@ -26,10 +26,10 @@ module.exports = {
         },
     },
 
-    // extra types to be added to specified properties
-    addTypesToProperty: {
+    // extra types to be added to specific classes
+    addPropertyToClasses: {
         hasPart: {
-            types: [
+            classes: [
                 "Dataset",
                 "File",
                 "File, ImageObject",
@@ -44,8 +44,8 @@ module.exports = {
         },
     },
 
-    // special compound type definitions
-    compoundTypes: [
+    // special compound class definitions
+    compoundClasses: [
         "File, ImageObject",
         "File, SoftwareSourceCode",
         "RepositoryObject, ImageObject",

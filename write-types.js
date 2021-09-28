@@ -10,8 +10,8 @@ const {
     simpleDataTypes,
     selectDataTypes,
     rename,
-    addTypesToProperty,
-    compoundTypes,
+    addPropertyToClasses,
+    compoundClasses,
 } = require("./configuration");
 
 let classes = {};
@@ -36,7 +36,7 @@ const defs = {
     mapClassHierarchies();
     collapseNames();
     sortClassData();
-    addCompoundTypeDefinitions();
+    addCompoundClassDefinitions();
     let context = await extractCrateContext();
     // diffSchemaOrgAndCrateContext({ context });
     await writeTypeDefinitions();
@@ -95,14 +95,14 @@ function sortClassData() {
     });
 }
 
-function addCompoundTypeDefinitions() {
-    compoundTypes.forEach((type) => {
-        let types = type.split(", ");
+function addCompoundClassDefinitions() {
+    compoundClasses.forEach((className) => {
+        let types = className.split(", ");
         let hierarchy = uniq(
-            flattenDeep(types.map((type) => classes[type].hierarchy)).reverse()
+            flattenDeep(types.map((c) => classes[c].hierarchy)).reverse()
         ).reverse();
-        classes[type] = {
-            name: type,
+        classes[className] = {
+            name: className,
             subClassOf: [],
             allowAdditionalProperties: false,
             inputs: [],
@@ -127,8 +127,8 @@ function extractClassesAndProperties({ graph }) {
             let range = getValue(entry[defs.range]).map((e) =>
                 rename.classes[e] ? rename.classes[e] : e
             );
-            if (addTypesToProperty[name]) {
-                range = [...range, ...addTypesToProperty[name].types];
+            if (addPropertyToClasses[name]) {
+                range = [...range, ...addPropertyToClasses[name].classes];
                 range = uniq(range).sort();
             }
 
