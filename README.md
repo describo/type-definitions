@@ -1,11 +1,16 @@
 The Describo online UI requires a profile that defines the entities and their properties that can be
 added. This folder has the tools to create that profile.
 
+- [Setup](#setup)
 - [Creating the type definitions data file from schema.org data](#creating-the-type-definitions-data-file-from-schemaorg-data)
 - [Adding RO-Crate extra entity definitions](#adding-ro-crate-extra-entity-definitions)
 - [Rename entities and properties](#rename-entities-and-properties)
 - [Adding entities type to properties](#adding-entities-type-to-properties)
 - [Compound types](#compound-types)
+
+## Setup
+
+`> npm install`
 
 ## Creating the type definitions data file from schema.org data
 
