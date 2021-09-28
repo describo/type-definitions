@@ -5,6 +5,3 @@ curl --silent --output crate-context.jsonld https://www.researchobject.org/ro-cr
 node write-types.js
 rm schema.org.jsonld
 rm crate-context.jsonld
-cp types/type-definitions.json ../src/common/type-definitions.json
-cp types/type-definitions-lookup.json ../src/common/type-definitions-lookup.json
-rm -rf types

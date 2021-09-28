@@ -14,11 +14,8 @@ added. This folder has the tools to create that profile.
 ```
 
 This script will download the latest schema.org jsonld data file and extract the entities and
-properties from it, writing a new set of type definitions for describo. The definitions will be
-copied into `../src/common`. Run this script to update those data files.
-
-If this script writes new type definitions they won't be available to production until you build a
-new release and push it out.
+properties from it, writing a new set of type definitions for describo. The definitions are created
+in the `types` folder.
 
 ## Adding RO-Crate extra entity definitions
 
