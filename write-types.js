@@ -1,4 +1,4 @@
-const { readJson, writeFile, ensureDir, readdir } = require("fs-extra");
+const { readJson, writeFile, ensureDir, readdir, writeJSON } = require("fs-extra");
 const { flattenDeep, orderBy, has, compact, uniq, uniqBy, isString, cloneDeep } = require("lodash");
 const path = require("path");
 const { expand } = require("jsonld");
@@ -270,12 +270,9 @@ async function writeTypeDefinitions() {
             help: item.help,
         });
     });
-    await writeFile(path.join("types", "type-definitions.json"), JSON.stringify(index, null, 2));
+    await writeJSON(path.join("types", "type-definitions.json"), index);
     // console.log(JSON.stringify(index, null, 2));
-    await writeFile(
-        path.join("types", "type-definitions-lookup.json"),
-        JSON.stringify(searchableIndex)
-    );
+    await writeJSON(path.join("types", "type-definitions-lookup.json"), searchableIndex);
 }
 
 function getValue(item, collapse) {
