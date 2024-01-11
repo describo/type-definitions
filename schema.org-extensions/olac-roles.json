@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "pcdm": "http://pcdm.org/models#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "bio": "https://bioschemas.org/"
+  },
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": [
+        "CreativeWork"
+      ],
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      },
+      "name": "ro-crate-metadata.json",
+      "@reverse": {}
+    },
+    {
+      "@id": "./",
+      "@type": [
+        "Dataset"
+      ],
+      "name": "My Research Object Crate",
+      "@reverse": {
+        "about": [
+          {
+            "@id": "ro-crate-metadata.json"
+          }
+        ]
+      },
+      "mentions": [
+        {
+          "@id": "https://schema.org/CreativeWork"
+        },
+        {
+          "@id": "http://www.language-archives.org/REC/role.html#annotator"
+        }
+      ]
+    },
+    {
+      "@id": "https://schema.org/CreativeWork",
+      "@type": [
+        "rdfs:Class"
+      ],
+      "name": "CreativeWork",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        },
+        "domainIncludes": {
+          "@id": "http://www.language-archives.org/REC/role.html#annotator"
+        }
+      },
+      "label": "CreativeWork"
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#annotator",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "annotator",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "annotator",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      }
+    }
+  ]
+}
