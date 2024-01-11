@@ -3,7 +3,7 @@ module.exports = {
     schema: "schema.org.jsonld",
 
     // the name of the ro crate context - expected to be in this folder
-    crateContext: "crate-context.jsonld",
+    crateContext: "rocrate.jsonld",
 
     // simple data types - ie not entities
     simpleDataTypes: ["Text", "Date", "DateTime", "Time", "Number", "Float", "Integer"],
@@ -40,6 +40,7 @@ module.exports = {
                 "RepositoryObject, ImageObject",
                 "ComputerLanguage, SoftwareApplication",
                 "FormalParameter",
+                "Thing",
             ],
         },
     },
