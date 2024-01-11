@@ -5,12 +5,20 @@ added. This folder has the tools to create that profile.
 - [Creating the type definitions data file from schema.org data](#creating-the-type-definitions-data-file-from-schemaorg-data)
 - [Adding RO-Crate extra entity definitions](#adding-ro-crate-extra-entity-definitions)
 - [Rename entities and properties](#rename-entities-and-properties)
-- [Adding entities type to properties](#adding-entities-type-to-properties)
+- [Adding entity types to properties](#adding-entity-types-to-properties)
 - [Compound types](#compound-types)
 
 ## Setup
 
-`> npm install`
+```bash
+> npm install
+
+# get the schema.org jsonld file
+wget https://schema.org/version/latest/schemaorg-current-https.jsonld -O schema.org.jsonld
+
+#
+wget
+```
 
 ## Creating the type definitions data file from schema.org data
 
@@ -41,9 +49,9 @@ structure that matches the spec you can define rename rules under the `rename` p
 existing examples. The rename step occurs after the type definition data structure has been created
 and the context has been compacted.
 
-## Adding entities type to properties
+## Adding entity types to properties
 
-Some properties like `hasPart` should allow adding more entity types that just those defined in
+Some properties like `hasPart` should allow adding more entity types than just those defined in
 schema.org. You can define these extra definitions in the `addTypesToProperty` property in
 `./configuration.js`. Specifically, define the property that you wish to augment and set it to an
 object with one property `types` which is the array of types that property should allow linking to.
