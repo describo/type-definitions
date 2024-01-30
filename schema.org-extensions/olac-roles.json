@@ -75,7 +75,399 @@
       "label": "annotator",
       "domainIncludes": {
         "@id": "https://schema.org/CreativeWork"
-      }
+      },
+      "description": "The participant produced an annotation of this or a related resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#author",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "author",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "author",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant contributed original writings to the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#compiler",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "compiler",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "compiler",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant is responsible for collecting the sub-parts of the resource together."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#consultant",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "consultant",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "consultant",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant contributes expertise to the creation of a work."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#data_inputter",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "data_inputter",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "data inputter",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant was responsible for entering, re-typing, and/or structuring the data contained in the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#depositor",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "depositor",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "depositor",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant was responsible for depositing the resource in an archive."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#developer",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "developer",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "developer",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant developed the methodology or tools that constitute the resource, or that were used to create the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#editor",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "editor",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "editor",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant reviewed, corrected, and/or tested the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#illustrator",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "illustrator",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "illustrator",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant contributed drawings or other illustrations to the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#interpreter",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "interpreter",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "interpreter",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant translates in real-time or explains the discourse recorded in the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#interviewer",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "interviewer",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "interviewer",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant conducted an interview that forms part of the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#participant",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "participant",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "participant",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant was present during the creation of the resource, but did not contribute substantially to its content."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#performer",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "performer",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "performer",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant performed some portion of a recorded, filmed, or transcribed resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#photographer",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "photographer",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "photographer",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant took the photograph, or shot the film, that appears in or constitutes the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#recorder",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "recorder",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "recorder",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant operated the recording machinery used to create the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#researcher",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "researcher",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "researcher",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The resource was created as part of the participant's research, or the research presents interim or final results from the participant's research."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#research_participant",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "research_participant",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "research participant",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant acted as a research subject or responded to a questionnaire, the results of which study form the basis of the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#responder",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "responder",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "responder",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant was an interlocutor in some sort of discourse event."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#signer",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "signer",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "signer",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant was a principal signer in a resource that consists of a recording, a film, or a transcription of a recorded resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#singer",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "singer",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "singer",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant sang, either individually or as part of a group, in a resource that consists of a recording, a film, or a transcription of a recorded resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#speaker",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "speaker",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "speaker",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant was a principal speaker in a resource that consists of a recording, a film, or a transcription of a recorded resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#sponsor",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "sponsor",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "sponsor",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant contributed financial support to the creation of the resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#transcriber",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "transcriber",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "transcriber",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant produced a transcription of this or a related resource."
+    },
+    {
+      "@id": "http://www.language-archives.org/REC/role.html#translator",
+      "@type": [
+        "rdf:Property"
+      ],
+      "name": "translator",
+      "@reverse": {
+        "mentions": {
+          "@id": "./"
+        }
+      },
+      "label": "translator",
+      "domainIncludes": {
+        "@id": "https://schema.org/CreativeWork"
+      },
+      "description": "The participant produced a translation of this or a related resource."
     }
   ]
 }
