@@ -1,0 +1,180 @@
+{
+    "@context": {
+        "pcdm": "https://pcdm.org/models#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "https://schema.org/",
+        "bio": "https://bioschemas.org/"
+    },
+    "@graph": [
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "conformsTo": { "@id": "https://w3id.org/ro/crate/1.1" },
+            "about": { "@id": "./" },
+            "name": "ro-crate-metadata.json",
+            "@reverse": {}
+        },
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "name": "RO Crate extensions to schema.org",
+            "@reverse": { "about": { "@id": "ro-crate-metadata.json" } },
+            "mentions": [
+                { "@id": "pcdm:Object" },
+                { "@id": "bio:ComputationalWorkflow" },
+                { "@id": "bio:FormalParameter" },
+                { "@id": "pcdm:fileOf" },
+                { "@id": "pcdm:hasFile" },
+                { "@id": "pcdm:hasMember" },
+                { "@id": "pcdm:memberOf" },
+                { "@id": "schema:resultOf" },
+                { "@id": "bio:ComputationalWorkflow#input" },
+                { "@id": "bio:ComputationalWorkflow#output" },
+                { "@id": "https://schema.org/Thing" },
+                { "@id": "https://schema.org/File" },
+                { "@id": "pcdm:Collection" }
+            ],
+            "publisher": { "@id": "https://describo.github.io/" },
+            "author": { "@id": "https://orcid.org/0000-0002-3545-944X" },
+            "contributor": { "@id": "https://orcid.org/0000-0001-5383-6993" },
+            "licence": { "@id": "https://creativecommons.org/licenses/by-sa/4.0" }
+        },
+        {
+            "@id": "pcdm:Collection",
+            "@type": "rdfs:Class",
+            "name": "Collection",
+            "rdfs:comment": "A Collection is a group of resources. Collections have descriptive metadata, access metadata, and may links to works and/or collections. By default, member works and collections are an",
+            "rdfs:label": "Collection",
+            "rdfs:subClassOf": { "@id": "https://schema.org/Thing" }
+        },
+        {
+            "@id": "pcdm:Object",
+            "@type": "rdfs:Class",
+            "name": "Object",
+            "rdfs:comment": "An Object is an intellectual entity, sometimes called a \"work\", \"digital object\", etc. Objects have descriptive metadata, access metadata, may contain files and other Objects as member \"components\". Each level of a work is therefore represented by an Object instance, and is capable of standing on its own, being linked to from Collections and other Objects. Member Objects can be ordered using the ORE Proxy class.",
+            "rdfs:label": "Object",
+            "rdfs:subClassOf": { "@id": "https://schema.org/Thing" }
+        },
+        {
+            "@id": "bio:ComputationalWorkflow",
+            "@type": "rdfs:Class",
+            "name": "bio:ComputationalWorkflow",
+            "rdfs:label": "ComputationalWorkflow",
+            "rdfs:subClassOf": { "@id": "schema:Thing" }
+        },
+        {
+            "@id": "bio:FormalParameter",
+            "@type": "rdfs:Class",
+            "name": "FormalParameter",
+            "rdfs:label": "FormalParameter",
+            "rdfs:comment": "A FormalParameter is an identified variable used to stand for the actual value(s) that are consumed/produced by a set of steps",
+            "rdfs:subClassOf": { "@id": "schema:Thing" }
+        },
+        {
+            "@id": "schema:MediaObject",
+            "@type": "rdfs:Class",
+            "name": "File"
+        },
+        {
+            "@id": "schema:Thing",
+            "@type": "rdfs:Class",
+            "name": "Thing"
+        },
+        {
+            "@id": "schema:Dataset",
+            "@type": "rdfs:Class",
+            "name": "Dataset"
+        },
+        {
+            "@id": "pcdm:fileOf",
+            "@type": "rdf:Property",
+            "name": "fileOf",
+            "schema:domainIncludes": { "@id": "schema:MediaObject" },
+            "schema:inverseOf": "",
+            "schema:rangeIncludes": { "@id": "pcdm:Object" },
+            "rdfs:comment": "Links from a File to its containing Object.",
+            "rdfs:label": "fileOf"
+        },
+        {
+            "@id": "pcdm:hasFile",
+            "@type": "rdf:Property",
+            "name": "hasFile",
+            "rdfs:label": "hasFile",
+            "schema:domainIncludes": { "@id": "pcdm:Object" },
+            "schema:inverseOf": "",
+            "schema:rangeIncludes": { "@id": "schema:MediaObject" },
+            "rdfs:comment": "Links to a File contained by this Object."
+        },
+        {
+            "@id": "pcdm:hasMember",
+            "@type": "rdf:Property",
+            "name": "hasMember",
+            "rdfs:label": "hasMember",
+            "schema:domainIncludes": [{ "@id": "pcdm:Object" }, { "@id": "pcdm:Collection" }],
+            "schema:inverseOf": "",
+            "schema:rangeIncludes": [{ "@id": "pcdm:Object" }, { "@id": "pcdm:Collection" }],
+            "rdfs:comment": "Links to a subsidiary Object or Collection. Typically used to link to component parts, such as a book linking to a page.  Note on transitivity: hasMember is   not defined as transitive, but applications may treat it as transitive as local needs   dictate."
+        },
+        {
+            "@id": "pcdm:memberOf",
+            "@type": "rdf:Property",
+            "name": "memberOf",
+            "rdfs:label": "memberOf",
+            "schema:domainIncludes": [{ "@id": "pcdm:Object" }, { "@id": "pcdm:Collection" }],
+            "schema:inverseOf": "rdf:property",
+            "schema:rangeIncludes": [{ "@id": "pcdm:Object" }, { "@id": "pcdm:Collection" }],
+            "rdfs:comment": "Links from an Object or Collection to a containing Object or Collection."
+        },
+        {
+            "@id": "schema:resultOf",
+            "@type": "rdf:Property",
+            "name": "resultOf",
+            "rdfs:label": "resultOf",
+            "schema:domainIncludes": [{ "@id": "schema:Dataset" }, { "@id": "schema:MediaObject" }],
+            "schema:inverseOf": { "@id": "result" },
+            "schema:rangeIncludes": { "@id": "schema:Action" },
+            "rdfs:comment": "Inverse of property result"
+        },
+        {
+            "@id": "bio:ComputationalWorkflow#input",
+            "@type": "rdf:Property",
+            "name": "ComputationalWorkflow#input",
+            "rdfs:label": "ComputationalWorkflow#input",
+            "schema:domainIncludes": { "@id": "bio:ComputationalWorkflow" },
+            "schema:inverseOf": "",
+            "schema:rangeIncludes": { "@id": "bio:FormalParameter" },
+            "rdfs:comment": "An input required to use the computational workflow (eg. Excel spreadsheet, BAM file)"
+        },
+        {
+            "@id": "bio:ComputationalWorkflow#output",
+            "@type": "rdf:Property",
+            "name": "ComputationalWorkflow#output",
+            "rdfs:label": "ComputationalWorkflow#output",
+            "schema:domainIncludes": { "@id": "bio:ComputationalWorkflow" },
+            "schema:inverseOf": "",
+            "schema:rangeIncludes": { "@id": "bio:FormalParameter" },
+            "rdfs:comment": "An output produced by the computational workflow"
+        },
+        {
+            "@id": "https://describo.github.io/",
+            "@type": "Organization",
+            "name": "Describo"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-3545-944X",
+            "@type": "Person",
+            "name": "Peter Sefton"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-5383-6993",
+            "@type": "Person",
+            "name": "Marco La Rosa"
+        },
+        {
+            "@id": "https://creativecommons.org/licenses/by-sa/4.0",
+            "@type": "URL",
+            "name": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+    ]
+}
