@@ -12,12 +12,6 @@ added. This folder has the tools to create that profile.
 
 ```bash
 > npm install
-
-# get the schema.org jsonld file
-wget https://schema.org/version/latest/schemaorg-current-https.jsonld -O schema.org.jsonld
-
-#
-wget
 ```
 
 ## Creating the type definitions data file from schema.org data
