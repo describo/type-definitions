@@ -405,13 +405,18 @@ function applyMappings({ definitions }) {
                 const mapping = configuration.mappings.classes[t];
                 return mapping ? mapping : t;
             });
+            i.type = uniq(i.type);
+            i.type = i.type.sort();
             return i;
         });
+
         definitions[newClassName].inputs = definitions[newClassName].inputs.map((i) => {
             i.type = i.type.map((t) => {
                 const mapping = configuration.mappings.classes[t];
                 return mapping ? mapping : t;
             });
+            i.type = uniq(i.type);
+            i.type = i.type.sort();
             return i;
         });
     }

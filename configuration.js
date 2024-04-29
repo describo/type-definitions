@@ -1,30 +1,31 @@
 // remap data types for properties
 export const remap = {
-    "https://schema.org/description": {
+    "http://schema.org/description": {
+        Text: "TextArea",
+        TextObject: "TextArea",
+    },
+    "http://schema.org/disambiguatingDescription": {
         Text: "TextArea",
     },
-    "https://schema.org/disambiguatingDescription": {
+    "http://schema.org/abstract": {
         Text: "TextArea",
     },
-    "https://schema.org/abstract": {
+    "http://schema.org/citation": {
         Text: "TextArea",
     },
-    "https://schema.org/citation": {
+    "http://schema.org/comment": {
         Text: "TextArea",
     },
-    "https://schema.org/comment": {
+    "http://schema.org/conditionsOfAccess": {
         Text: "TextArea",
     },
-    "https://schema.org/conditionsOfAccess": {
+    "http://schema.org/creditText": {
         Text: "TextArea",
     },
-    "https://schema.org/creditText": {
+    "http://schema.org/temporal": {
         Text: "TextArea",
     },
-    "https://schema.org/temporal": {
-        Text: "TextArea",
-    },
-    "https://schema.org/text": {
+    "http://schema.org/text": {
         Text: "TextArea",
     },
 };
