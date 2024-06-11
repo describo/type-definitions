@@ -120,6 +120,12 @@ export function extractClasses({ crate }) {
     let classes = [];
     for (let entity of crate["@graph"]) {
         if (["rdfs:Class"].includes(entity["@type"])) {
+            if (!entity.comment) {
+                console.log(`WARNING: ${entity.name} does not have a comment (description)`);
+            }
+            if (!entity.label) {
+                console.log(`WARNING: ${entity.name} does not have a label`);
+            }
             classes.push(entity);
         }
     }
@@ -135,6 +141,12 @@ export function extractProperties({ crate }) {
     let properties = [];
     for (let entity of crate["@graph"]) {
         if (["rdf:Property"].includes(entity["@type"])) {
+            if (!entity.comment) {
+                console.log(`WARNING: ${entity.name} does not have a comment (description)`);
+            }
+            if (!entity.label) {
+                console.log(`WARNING: ${entity.name} does not have a label`);
+            }
             properties.push(entity);
         }
     }
@@ -318,6 +330,7 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
     for (let property of properties) {
         let classDefinition;
         try {
+            if (!property.domain) continue;
             for (classDefinition of property.domain) {
                 if (!classDefinition) continue;
                 const inputDefinition = {
@@ -366,6 +379,8 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
                 definitions[classDefinition].inputs.push(inputDefinition);
             }
         } catch (error) {
+            console.log(property);
+            console.log(error);
             if (!property.comment.match(/deprecated/)) {
                 console.log("PROPERTY", property);
                 console.log("CLASS DEF", classDefinition, definitions[classDefinition]);
@@ -389,6 +404,8 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
 function applyMappings({ definitions }) {
     for (let className of Object.keys(definitions)) {
         const newClassName = configuration.mappings.classes[className];
+        if (!newClassName) continue;
+
         // create the class mappings
         if (configuration.mappings.classes[className]) {
             definitions[newClassName] = cloneDeep(definitions[className]);
