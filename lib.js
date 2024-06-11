@@ -75,6 +75,50 @@ export async function createDescriboMainProfile() {
     return definitions;
 }
 
+export async function createDescriboContext() {
+    const contextVersion = `1.0`;
+    const context = {
+        "@id": `https://raw.githubusercontent.com/describo/type-definitions/master/contexts/${contextVersion}/context.jsonld`,
+        name: "Describo Extensions Context",
+        version: contextVersion,
+        isBasedOn: [],
+        license: "https://creativecommons.org/publicdomain/zero/1.0/",
+        "@context": {},
+    };
+
+    const prefixes = {};
+
+    for (let extension of await readdir("./schema.org-extensions")) {
+        if (extension === ".DS_Store") continue;
+        if (extension === "ro-crate-additional-schema") continue;
+        let crate = await readExtension({ name: extension });
+
+        for (let entity of crate["@graph"]) {
+            if (entity["@type"] === "rdfs:Class" && !entity["@id"].match(/schema\.org/)) {
+                // console.log(entity["@id"], entity.name);
+                context["@context"][entity.name] = entity["@id"];
+
+                const prefix = entity["@id"].match("#")
+                    ? entity["@id"].split("#").shift()
+                    : entity["@id"].split("/").slice(0, -1).join("/");
+                prefixes[prefix] = true;
+            }
+            if (entity["@type"] === "rdf:Property" && !entity["@id"].match(/schema\.org/)) {
+                // console.log(entity["@id"], entity.name);
+                context["@context"][entity.name] = entity["@id"];
+
+                const prefix = entity["@id"].match("#")
+                    ? entity["@id"].split("#").shift()
+                    : entity["@id"].split("/").slice(0, -1).join("/");
+                prefixes[prefix] = true;
+            }
+        }
+    }
+
+    context.isBasedOn = Object.keys(prefixes).map((p) => ({ "@id": p }));
+    return context;
+}
+
 /**
  *
  *  Read the extension file named 'name'
