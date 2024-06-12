@@ -78,7 +78,7 @@ export async function createDescriboMainProfile() {
 export async function createDescriboContext() {
     const contextVersion = `1.0`;
     const context = {
-        "@id": `https://raw.githubusercontent.com/describo/type-definitions/master/contexts/${contextVersion}/context.jsonld`,
+        "@id": `https://describo.github.io/type-definitions/context/${contextVersion}/context.jsonld`,
         name: "Describo Extensions Context",
         version: contextVersion,
         isBasedOn: [],

@@ -64,6 +64,7 @@ This tool will create a context with all of the additions found in the extension
 {
     "@context": [
         "https://w3id.org/ro/crate/1.1/context",
+        "https://describo.github.io/type-definitions/context/1.0/context.jsonld"
     ],
     "@graph": [ ... ]
 }
