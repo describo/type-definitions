@@ -1,16 +1,23 @@
 Describo requires a profile that defines the entities and their properties that can be added. This
 folder has the tools to create that profile.
 
--   [Setup](#setup)
--   [Creating the type definitions data file from schema.org data](#creating-the-type-definitions-data-file-from-schemaorg-data)
--   [How it works](#how-it-works)
--   [Adding RO-Crate extensions](#adding-ro-crate-extensions)
--   [Adding extensions to schema.org](#adding-extensions-to-schemaorg)
--   [Context](#context)
--   [Configuration](#configuration)
-    -   [remap](#remap)
-    -   [mappings](#mappings)
-    -   [addClassesToProperty](#addclassestoproperty)
+- [Licensing](#licensing)
+- [Setup](#setup)
+- [Creating the type definitions data file from schema.org data](#creating-the-type-definitions-data-file-from-schemaorg-data)
+- [How it works](#how-it-works)
+- [Adding RO-Crate extensions](#adding-ro-crate-extensions)
+- [Adding extensions to schema.org](#adding-extensions-to-schemaorg)
+- [Context](#context)
+- [Configuration](#configuration)
+  - [remap](#remap)
+  - [mappings](#mappings)
+  - [addClassesToProperty](#addclassestoproperty)
+
+## Licensing
+
+The source code in this repository is LICENSED with the MIT licence. The extensions are individually
+licensed with CC licenses. If you re-use them elsewhere be sure that you comply and retaing the
+attribution statements.
 
 ## Setup
 
