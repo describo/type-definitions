@@ -397,18 +397,16 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
                     });
                 }
 
-                // remap all links to Thing to ANY
+                // remap all links to Thing to Thing and ANY
                 inputDefinition.type = flattenDeep(
                     inputDefinition.type.map((type) => (type !== "Thing" ? type : ["Thing", "ANY"]))
                 );
 
                 // add extra property targets if defined
                 if (configuration.addClassesToProperty[property["@id"]]) {
-                    inputDefinition.type = uniq(
-                        inputDefinition.type
-                            .concat(configuration.addClassesToProperty[property["@id"]])
-                            .sort()
-                    );
+                    inputDefinition.type = inputDefinition.type
+                        .concat(configuration.addClassesToProperty[property["@id"]])
+                        .sort();
                 }
 
                 // add enumerations as select objects
@@ -422,6 +420,9 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
                     inputDefinition.type = [...inputDefinition.type, "SelectURL"];
                     inputDefinition.values = values;
                 }
+
+                // sort types and ensure uniq only
+                inputDefinition.type = uniq(inputDefinition.type.sort());
 
                 definitions[classDefinition].inputs.push(inputDefinition);
             }

@@ -37,6 +37,10 @@ export const remap = {
     "http://schema.org/text": {
         Text: "TextArea",
     },
+    "http://schema.org/geo": {
+        GeoCoordinates: "Geometry",
+        GeoShape: "Geometry",
+    },
 };
 
 // rules for renaming properties and classes
