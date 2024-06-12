@@ -8,6 +8,7 @@ import cloneDeep from "lodash-es/cloneDeep.js";
 import uniq from "lodash-es/uniq.js";
 import compact from "lodash-es/compact.js";
 import flattenDeep from "lodash-es/flattenDeep.js";
+import startCase from 'lodash-es/startCase.js'
 import * as configuration from "./configuration.js";
 
 export async function createDescriboMainProfile() {
@@ -380,7 +381,7 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
                 const inputDefinition = {
                     id: property["@id"],
                     name: property.name,
-                    label: property.label,
+                    label: startCase(property.label),
                     help: property.comment,
                     required: false,
                     multiple: property["@id"] === "https://schema.org/name" ? false : true,
