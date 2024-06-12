@@ -1,3 +1,12 @@
+/**
+ *
+ *  !!!NOTE!!!
+ *
+ *  The schema.org-jsonld file used http urls `NOT` https. So,
+ *   you need to use http url's in this file or things won't line up
+ *   when you're expecting them to.
+ *
+ */
 // remap data types for properties
 export const remap = {
     "http://schema.org/description": {
@@ -41,8 +50,9 @@ export const mappings = {
     },
 };
 
+// define additional types to be associated for a property
 export const addClassesToProperty = {
-    "https://schema.org/hasPart": [
+    "http://schema.org/hasPart": [
         "File",
         "Dataset",
         "RepositoryCollection",

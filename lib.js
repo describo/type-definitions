@@ -8,7 +8,7 @@ import cloneDeep from "lodash-es/cloneDeep.js";
 import uniq from "lodash-es/uniq.js";
 import compact from "lodash-es/compact.js";
 import flattenDeep from "lodash-es/flattenDeep.js";
-import startCase from 'lodash-es/startCase.js'
+import startCase from "lodash-es/startCase.js";
 import * as configuration from "./configuration.js";
 
 export async function createDescriboMainProfile() {
@@ -404,9 +404,11 @@ function mapPropertiesToClasses({ definitions, properties, enumerations }) {
 
                 // add extra property targets if defined
                 if (configuration.addClassesToProperty[property["@id"]]) {
-                    inputDefinition.type = inputDefinition.type
-                        .concat(configuration.addClassesToProperty[property["@id"]])
-                        .sort();
+                    inputDefinition.type = uniq(
+                        inputDefinition.type
+                            .concat(configuration.addClassesToProperty[property["@id"]])
+                            .sort()
+                    );
                 }
 
                 // add enumerations as select objects
